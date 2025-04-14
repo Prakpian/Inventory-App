@@ -1,5 +1,5 @@
 # Inventory-App
 
-Inventory application for The Odin Project
+Inventory CRUD application for The Odin Project with a database
 
-Nodejs, Express, EJS, Tailwind
+Stack: Nodejs, Express, EJS, Tailwind, PostgreSQL
