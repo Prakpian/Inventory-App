@@ -1,0 +1,32 @@
+<h1 style="margin-top: 4rem; margin-bottom: 2rem">Add New Item</h1>
+<form action="/add" method="POST">
+  <div class="mb-3">
+    <label for="name" class="form-label">Item Name</label>
+    <input type="text" class="form-control" id="name" name="name" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select class="form-select" id="category" name="category" required>
+      <option value="">Select a category</option>
+      <option value="phones">Phone</option>
+      <option value="tablets">Tablet</option>
+      <option value="laptops">Laptop</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="stock" class="form-label">Stock Amount</label>
+    <input
+      type="number"
+      class="form-control"
+      id="stock"
+      name="stock"
+      min="0"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Item</button>
+  <a href="/phone" class="btn btn-secondary">Cancel</a>
+</form>
