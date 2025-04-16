@@ -6,8 +6,8 @@ const port = 3000;
 const path = require("path");
 const methodOverride = require("method-override");
 
-const phoneRoutes = require("./src/routes/phone.routes");
-const formRoutes = require("./src/routes/addForm.routes");
+// const phoneRoutes = require("./src/routes/phone.routes");
+// const formRoutes = require("./src/routes/addForm.routes");
 
 app.use(expressEjsLayouts);
 app.use(express.static("public"));
@@ -19,8 +19,10 @@ app.set("layout", "index");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use("/phones", phoneRoutes);
-app.use("/add", formRoutes);
+// app.use("/phones", phoneRoutes);
+// app.use("/tablets", require("./src/routes/tablets.routes"));
+app.use("/add", require("./src/routes/addForm.routes"));
+app.use("/", require("./src/routes/index.routes"));
 
 app.get("/", (req, res) => {
   res.render("pages/home", { title: "Home" });

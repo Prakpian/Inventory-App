@@ -1,7 +1,7 @@
 const pool = require("./pool");
 
 async function getAllitems(category) {
-  const validCategories = ["phones", "tablet", "laptop"];
+  const validCategories = ["phones", "tablets", "laptops"];
   if (!validCategories.includes(category)) {
     throw new Error("Invalid category request");
   }

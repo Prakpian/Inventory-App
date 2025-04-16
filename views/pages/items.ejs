@@ -1,0 +1,39 @@
+<h1 style="margin-top: 4rem; margin-bottom: 2rem">
+  Inventory (<%= category.charAt(0).toUpperCase() + category.slice(1) %>)
+</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if(items.length == 0) { %>
+    <tr>
+      <td colspan="3">
+        <p>Please add an item...</p>
+      </td>
+    </tr>
+    <% } else { items.forEach(function(item) { %>
+    <tr>
+      <td><%= item.itemname %></td>
+      <td><%= item.stock %></td>
+      <td>
+        <div class="d-flex gap-2">
+          <form action="/<%= category %>/<%= item.id %>/edit" method="GET">
+            <button type="submit" class="btn btn-primary">Edit</button>
+          </form>
+          <form
+            action="/<%= category %>/<%= item.id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </td>
+    </tr>
+    <% }); } %>
+  </tbody>
+</table>
